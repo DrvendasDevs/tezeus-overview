@@ -1,0 +1,46 @@
+-- Recriar funções com search_path seguro
+CREATE OR REPLACE FUNCTION public.hash_password(password TEXT)
+RETURNS TEXT
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = 'public'
+AS $$
+BEGIN
+  -- Se a senha já está hasheada (começa com $2), retorna ela mesma
+  IF password ~ '^(\$2[abyxz]?\$|\$2\$)' THEN
+    RETURN password;
+  END IF;
+  
+  -- Se não, gera o hash
+  RETURN crypt(password, gen_salt('bf', 10));
+END;
+$$;
+
+-- Função para verificar senha
+CREATE OR REPLACE FUNCTION public.verify_password(password TEXT, hash TEXT)
+RETURNS BOOLEAN
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = 'public'
+AS $$
+BEGIN
+  RETURN crypt(password, hash) = hash;
+END;
+$$;
+
+-- Trigger function para hash automático de senhas
+CREATE OR REPLACE FUNCTION public.hash_user_password()
+RETURNS TRIGGER
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = 'public'
+AS $$
+BEGIN
+  -- Se senha foi fornecida, fazer hash
+  IF NEW.senha IS NOT NULL AND NEW.senha != '' THEN
+    NEW.senha = public.hash_password(NEW.senha);
+  END IF;
+  
+  RETURN NEW;
+END;
+$$;

@@ -1,0 +1,62 @@
+project_id = "zldeaozqxjwvzgrblyrh"
+
+[realtime]
+enabled = true
+ip_version = "IPv4"
+
+[functions.get-queue-users]
+verify_jwt = false
+
+[functions.send-whatsapp-message]
+verify_jwt = false
+
+[functions.send-message]
+verify_jwt = false
+
+[functions.message-sender]
+verify_jwt = false
+
+[functions.n8n-send-message]
+verify_jwt = false
+
+[functions.n8n-media-processor]
+verify_jwt = false
+
+[functions.evolution-webhook-v2]
+verify_jwt = false
+
+[functions.zapi-webhook]
+verify_jwt = false
+
+[functions.process-profile-image]
+verify_jwt = false
+
+[functions.test-send-msg]
+verify_jwt = false
+
+[functions.serve-local-media]
+verify_jwt = false
+
+[functions.update-zapi-message-status-from-n8n]
+verify_jwt = false
+
+[functions.check-message-automations]
+verify_jwt = false
+
+[functions.update-conversation-queue]
+verify_jwt = false
+
+[functions.convert-webm-to-mp3]
+verify_jwt = false
+
+[functions.external-webhook-api]
+verify_jwt = false
+
+[functions.manage-workspace-api-keys]
+verify_jwt = false
+
+[functions.check-time-based-automations]
+verify_jwt = false
+
+[functions.edit-zapi-message]
+verify_jwt = false

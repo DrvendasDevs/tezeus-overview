@@ -1,0 +1,4 @@
+-- Enable RLS on pipeline tables
+ALTER TABLE pipelines ENABLE ROW LEVEL SECURITY;
+ALTER TABLE pipeline_columns ENABLE ROW LEVEL SECURITY;
+ALTER TABLE pipeline_cards ENABLE ROW LEVEL SECURITY;

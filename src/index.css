@@ -1,0 +1,353 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tezeus CRM Design System - All colors MUST be HSL */
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 0 0% 96%;
+    --foreground: 220 13% 18%;
+
+    /* Brand colors */
+    --brand-blue: 220 100% 25%;
+    --brand-blue-light: 220 100% 45%;
+    --brand-yellow: 45 100% 65%;
+    --brand-yellow-hover: 45 100% 55%;
+
+    /* Status colors */
+    --success: 120 50% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 35 100% 50%;
+    --warning-foreground: 0 0% 100%;
+    --error: 0 65% 55%;
+    --error-foreground: 0 0% 100%;
+
+    /* UI colors */
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
+    --card-border: 220 13% 91%;
+
+    --sidebar: 220 13% 98%;
+    --sidebar-foreground: 220 13% 18%;
+    --sidebar-active: var(--primary);
+    --sidebar-active-foreground: var(--primary-foreground);
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 18%;
+
+    --primary: 45 100% 65%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 220 13% 96%;
+    --secondary-foreground: 220 13% 18%;
+
+    --muted: 220 13% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: var(--primary);
+    --accent-foreground: var(--primary-foreground);
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 45 100% 55%;
+
+    --radius: 0.5rem;
+
+    /* Metric card colors */
+    --metric-card: 220 13% 98%;
+    --metric-card-foreground: 220 13% 18%;
+
+    /* Interactive states */
+    --hover-light: 220 13% 95%;
+    --active-light: 220 100% 96%;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: var(--muted);
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Sonner (toasts) */
+    --sonner-toast-bg: #1f1f1f;
+    --sonner-toast-fg: #e5e7eb;
+    --sonner-toast-border: #374151;
+
+    --background: 220 15% 8%;
+    --foreground: 210 40% 98%;
+
+    /* Brand colors - adjusted for dark mode */
+    --brand-blue: 220 100% 45%;
+    --brand-blue-light: 220 100% 55%;
+    --brand-yellow: 45 100% 65%;
+    --brand-yellow-hover: 45 100% 55%;
+
+    /* Status colors - dark mode */
+    --success: 120 50% 55%;
+    --success-foreground: 0 0% 0%;
+    --warning: 35 100% 60%;
+    --warning-foreground: 0 0% 0%;
+    --error: 0 65% 65%;
+    --error-foreground: 0 0% 0%;
+
+    /* UI colors - dark mode */
+    --card: 220 15% 16%;
+    --card-foreground: 210 40% 98%;
+    --card-border: 220 15% 22%;
+
+    --sidebar: 220 15% 10%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-active: var(--primary);
+    --sidebar-active-foreground: var(--primary-foreground);
+    --sidebar-border: 220 15% 15%;
+
+    --popover: 220 15% 16%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 45 100% 65%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 220 15% 16%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 15% 16%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: var(--primary);
+    --accent-foreground: var(--primary-foreground);
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 22%;
+    --input: 220 15% 16%;
+    --ring: 45 100% 55%;
+
+    /* Metric card colors - dark mode */
+    --metric-card: 220 15% 16%;
+    --metric-card-foreground: 210 40% 98%;
+
+    /* Interactive states - dark mode */
+    --hover-light: 220 15% 20%;
+    --active-light: 220 15% 24%;
+
+    --sidebar-background: 220 15% 10%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 16%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark [data-sonner-toast] {
+    background-color: var(--sonner-toast-bg) !important;
+    color: var(--sonner-toast-fg) !important;
+    border-color: var(--sonner-toast-border) !important;
+  }
+
+  .dark [data-sonner-toast] [data-title],
+  .dark [data-sonner-toast] [data-description] {
+    color: var(--sonner-toast-fg) !important;
+  }
+
+  .dark-blue {
+    --background: 220 25% 12%;
+    --foreground: 210 40% 98%;
+
+    /* Brand colors - blue theme */
+    --brand-blue: 210 100% 50%;
+    --brand-blue-light: 210 100% 60%;
+    --brand-yellow: 45 100% 65%;
+    --brand-yellow-hover: 45 100% 55%;
+
+    /* Status colors - blue theme */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 35 100% 60%;
+    --warning-foreground: 0 0% 0%;
+    --error: 0 65% 65%;
+    --error-foreground: 0 0% 0%;
+
+    /* UI colors - blue theme */
+    --card: 220 20% 18%;
+    --card-foreground: 210 40% 98%;
+    --card-border: 220 20% 25%;
+
+    --sidebar: 220 25% 12%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-active: 210 100% 50%;
+    --sidebar-active-foreground: 0 0% 100%;
+    --sidebar-border: 220 20% 20%;
+
+    --popover: 220 20% 18%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 22%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 20% 22%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 210 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 25%;
+    --input: 220 20% 22%;
+    --ring: 210 100% 60%;
+
+    /* Metric card colors - blue theme */
+    --metric-card: 220 20% 18%;
+    --metric-card-foreground: 210 40% 98%;
+
+    /* Interactive states - blue theme */
+    --hover-light: 220 20% 25%;
+    --active-light: 220 25% 30%;
+
+    --sidebar-background: 220 25% 12%;
+    --sidebar-primary: 210 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 22%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-ring: 210 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Glow animation for notification badges */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px hsl(var(--destructive)), 0 0 10px hsl(var(--destructive)), 0 0 15px hsl(var(--destructive));
+  }
+  50% {
+    box-shadow: 0 0 10px hsl(var(--destructive)), 0 0 20px hsl(var(--destructive)), 0 0 30px hsl(var(--destructive));
+  }
+}
+
+/* Pipeline card enter animation (fade + slide up) */
+@keyframes pipeline-card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pipeline-card-enter {
+  animation: pipeline-card-enter 220ms ease-out both;
+  will-change: opacity, transform;
+}
+
+/* Custom utilities */
+.min-w-80 {
+  min-width: 9rem;
+}
+
+/* Custom scrollbar styling - mesma cor do topo da coluna do pipeline */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d4d4d4 transparent; /* Modo claro: cinza do topo da coluna */
+}
+
+.dark * {
+  scrollbar-color: #374151 transparent; /* Modo escuro: gray-700 */
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #d4d4d4; /* Modo claro: cinza do topo da coluna */
+  border-radius: 4px;
+}
+
+.dark *::-webkit-scrollbar-thumb {
+  background-color: #374151; /* Modo escuro: gray-700 */
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #b8b8b8; /* Hover mais escuro no modo claro */
+}
+
+.dark *::-webkit-scrollbar-thumb:hover {
+  background-color: #4b5563; /* Hover mais claro no modo escuro (gray-600) */
+}
+
+/* Hide scrollbar (mantém scroll) */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE/Edge legado */
+  scrollbar-width: none; /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  display: none; /* Chrome/Safari */
+}
+
+/* Custom select styling */
+select option:checked,
+select option:hover {
+  background-color: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+/* Disable transitions during theme toggle to avoid partial animations */
+.disable-theme-transitions *,
+.disable-theme-transitions *::before,
+.disable-theme-transitions *::after {
+  transition: none !important;
+  animation-duration: 0ms !important;
+  animation-delay: 0ms !important;
+}
+
+/* SelectTrigger - cor cinza quando aberto (mesma cor do topo da coluna) */
+button[data-state="open"],
+button[data-state="delayed-open"] {
+  background-color: #d4d4d4 !important;
+  border-color: #d4d4d4 !important;
+}
+
+.dark button[data-state="open"],
+.dark button[data-state="delayed-open"] {
+  background-color: #374151 !important;
+  border-color: #374151 !important;
+}

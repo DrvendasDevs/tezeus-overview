@@ -1,0 +1,2 @@
+# Esta pasta será usada para armazenar mídia local do WhatsApp
+# Estrutura: /media/messages/{messageId}/{fileName}
